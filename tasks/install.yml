@@ -1,0 +1,12 @@
+---
+- name: Install Zabbix agent (RedHat)
+  yum:
+    enablerepo: zabbix
+    name: "{{ zabbix_agent_packages }}"
+  when: ansible_os_family == "RedHat"
+
+- name: Install Zabbix agent (Debian)
+  apt:
+    name: "{{ zabbix_agent_packages }}"
+    update_cache: true
+  when: ansible_os_family == "Debian"

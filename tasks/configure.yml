@@ -1,0 +1,17 @@
+---
+- name: Configure Zabbix agent service
+  service:
+    enabled: "{{ zabbix_agent_service_enabled }}"
+    name: "{{ zabbix_agent_service_name }}"
+    state: "{{ zabbix_agent_service_state }}"
+
+- name: Configure Zabbix agent
+  template:
+    backup: "{{ zabbix_agent_config_backup }}"
+    src: zabbix_agentd.conf.j2
+    dest: /etc/zabbix/zabbix_agentd.conf
+    owner: root
+    group: root
+    mode: "0644"
+    validate: zabbix_agentd -c %s
+  notify: Restart zabbix agent

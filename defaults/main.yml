@@ -1,0 +1,10 @@
+---
+zabbix_agent_service_enabled: true
+
+zabbix_agent_service_state: started
+
+zabbix_agent_version: 4.0
+
+zabbix_agent_config_backup: false
+
+zabbix_agent_config: {}
