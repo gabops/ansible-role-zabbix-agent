@@ -1,7 +1,10 @@
 ---
 - name: Prepare
   hosts: all
-  vars:
-    zabbix_repo_version: 4.4
-  roles:
-    - role: gabops.zabbix_repo
+  tasks:
+    - name: Install openssl
+      package:
+        name: openssl
+
+    - name: Generate psk
+      shell: openssl rand -hex 32 > /etc/opt/zabbix_agentd.psk
