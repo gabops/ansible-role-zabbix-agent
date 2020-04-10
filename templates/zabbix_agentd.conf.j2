@@ -73,7 +73,7 @@ DebugLevel={{ zabbix_agent_config.get('DebugLevel') }}
 SourceIP={{ zabbix_agent_config.get('SourceIP') }}
 {% endif %}
 
-{% if zabbix_agent_version == "4.5" %}
+{% if zabbix_agent_version | string == "5.0" %}
 ### Option: DenyKey
 #	Deny execution of items keys matching pattern.
 #	Multiple keys matching rules may be defined in combination with AllowKey.
@@ -234,7 +234,7 @@ HostMetadata={{ zabbix_agent_config.get('HostMetadata') }}
 HostMetadataItem={{ zabbix_agent_config.get('HostMetadataItem') }}
 {% endif %}
 
-{% if zabbix_agent_version == "4.5" %}
+{% if zabbix_agent_version | string == "5.0" %}
 ### Option: HostInterface --- NOTE: Only in 4.5
 #	Optional parameter that defines host interface.
 #	Host interface is used at host auto-registration process.
@@ -551,7 +551,7 @@ TLSPSKIdentity={{ zabbix_agent_config.get('TLSPSKIdentity') }}
 TLSPSKFile={{ zabbix_agent_config.get('TLSPSKFile') }}
 {% endif %}
 
-{% if zabbix_agent_version != "3.0" %}
+{% if zabbix_agent_version | string != "3.0" %}
 ####### For advanced users - TLS ciphersuite selection criteria #######
 
 ### Option: TLSCipherCert13

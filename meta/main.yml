@@ -44,4 +44,4 @@ dependencies:
   - role: gabops.zabbix_repo
     version: 0.1.1
     vars:
-      zabbix_repo_version: "{{ zabbix_agent_version }}"
+      zabbix_repo_version: "{{ 4.5 if zabbix_agent_version == 5.0 else zabbix_agent_version }}"
