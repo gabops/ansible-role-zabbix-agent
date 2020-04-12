@@ -12,13 +12,34 @@ None.
 Role Variables
 --------------
 
+### INSTALLATION PARAMETERS
 | Variable | Default value | Description |
 | :--- | :--- | :--- |
 | zabbix_agent_service_enabled | true | Controls whether or not Zabbix agent service is enable. |
 | zabbix_agent_service_state | started | Defines the state of the Zabbix agent service. Possible values should be `started` or `stopped`. |
 | zabbix_agent_version | 4.0 | Defines the version of Zabbix agent to install. Possible values are `3.0`, `4.0`, `4.4` or `5.0`. |
 | zabbix_agent_config_backup | false | Controls if the role should take a backup of `zabbix_agentd.conf` before applying any modification. |
-| zabbix_agent_config | {} | Defines the configuration to be applied to the `zabbix_agentd.conf`. Note that if this parameter is empty as it is by default, the file `zabbix_agentd.conf` will not be modified at all and your installation will use the unmodified default config file. |
+
+### AGENT CONFIGURATION:
+#### GENERAL PARAMETERS
+| Variable | Default value | Description |
+| :--- | :--- | :--- |
+
+#### ADVANCED PARAMETERS
+| Variable | Default value | Description |
+| :--- | :--- | :--- |
+
+#### USER-DEFINED MONITORED PARAMETERS
+| Variable | Default value | Description |
+| :--- | :--- | :--- |
+
+#### LOADABLE MODULES
+| Variable | Default value | Description |
+| :--- | :--- | :--- |
+
+#### TLS-RELATED PARAMETERS
+| Variable | Default value | Description |
+| :--- | :--- | :--- |
 
 ### Notes:
 
