@@ -12,7 +12,7 @@ None.
 Role Variables
 --------------
 
-### INSTALLATION PARAMETERS
+### BASIC PARAMETERS
 | Variable | Default value | Description |
 | :--- | :--- | :--- |
 | zabbix_agent_service_enabled | true | Controls whether or not Zabbix agent service is enable. |
@@ -59,21 +59,20 @@ Example Playbook
 - hosts: webservers
   vars:
     zabbix_agent_version: 4.4
-    zabbix_agent_config:
-      DebugLevel: 4
-      Hostname: "{{ inventory_hostname }}"
-      ListenIP: "{{ ansible_default_ipv4 }}"
-      Server: 192.168.0.10
-      StartAgents: 5
-      HostMetadataItem: system.uname
-      Timeout: 20
-      TLSConnect: psk
-      TLSAccept: psk
-      TLSPSKIdentity: "{{ inventory_hostname }}"
-      TLSPSKFile: /etc/zabbix/zabbix_agentd.psk
-      Include:
-        - /usr/local/etc/zabbix_agentd.userparams.conf
-        - /opt/zabbix_custom/*.conf
+    zabbix_agent_debuglevel: 4
+    zabbix_agent_hostname: "{{ inventory_hostname }}"
+    zabbix_agent_listenip: "{{ ansible_default_ipv4 }}"
+    zabbix_agent_server: 192.168.0.10
+    zabbix_agent_startagents: 5
+    zabbix_agent_hostmetadataItem: system.uname
+    zabbix_agent_timeout: 20
+    zabbix_agent_tlsconnect: psk
+    zabbix_agent_tlsaccept: psk
+    zabbix_agent_tlkspkidentity: "{{ inventory_hostname }}"
+    zabbix_agent_tlspskfile: /etc/zabbix/zabbix_agentd.psk
+    zabbix_agebt_include:
+      - /usr/local/etc/zabbix_agentd.userparams.conf
+      - /opt/zabbix_custom/*.conf
   roles:
       - role: gabops.zabbix_agent
 ```
