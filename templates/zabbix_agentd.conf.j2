@@ -10,8 +10,8 @@
 # Mandatory: no
 # Default:
 # PidFile=/tmp/zabbix_agentd.pid
-{% if zabbix_agent_config_pidfile != "" %}
-PidFile={{ zabbix_agent_config_pidfile }}
+{% if zabbix_agent_pidfile != "" %}
+PidFile={{ zabbix_agent_pidfile }}
 {% endif %}
 
 ### Option: LogType
@@ -23,8 +23,8 @@ PidFile={{ zabbix_agent_config_pidfile }}
 # Mandatory: no
 # Default:
 # LogType=file
-{% if zabbix_agent_config_logtype != "" %}
-LogType={{ zabbix_agent_config_logtype }}
+{% if zabbix_agent_logtype != "" %}
+LogType={{ zabbix_agent_logtype }}
 {% endif %}
 
 ### Option: LogFile
@@ -33,8 +33,8 @@ LogType={{ zabbix_agent_config_logtype }}
 # Mandatory: yes, if LogType is set to file, otherwise no
 # Default:
 # LogFile=
-{% if zabbix_agent_config_logfile != "" %}
-LogFile={{ zabbix_agent_config_logfile }}
+{% if zabbix_agent_logfile != "" %}
+LogFile={{ zabbix_agent_logfile }}
 {% endif %}
 
 ### Option: LogFileSize
@@ -45,8 +45,8 @@ LogFile={{ zabbix_agent_config_logfile }}
 # Range: 0-1024
 # Default:
 # LogFileSize=1
-{% if zabbix_agent_config_logfilesize != "" %}
-LogFileSize={{ zabbix_agent_config_logfilesize }}
+{% if zabbix_agent_logfilesize != "" %}
+LogFileSize={{ zabbix_agent_logfilesize }}
 {% endif %}
 
 ### Option: DebugLevel
@@ -62,8 +62,8 @@ LogFileSize={{ zabbix_agent_config_logfilesize }}
 # Range: 0-5
 # Default:
 # DebugLevel=3
-{% if zabbix_agent_config_debuglevel != "" %}
-DebugLevel={{ zabbix_agent_config_debuglevel }}
+{% if zabbix_agent_debuglevel != "" %}
+DebugLevel={{ zabbix_agent_debuglevel }}
 {% endif %}
 
 ### Option: SourceIP
@@ -72,8 +72,8 @@ DebugLevel={{ zabbix_agent_config_debuglevel }}
 # Mandatory: no
 # Default:
 # SourceIP=
-{% if zabbix_agent_config_sourceip != "" %}
-SourceIP={{ zabbix_agent_config_sourceip }}
+{% if zabbix_agent_sourceip != "" %}
+SourceIP={{ zabbix_agent_sourceip }}
 {% endif %}
 
 {% if zabbix_agent_version | string == "5.0" %}
@@ -87,8 +87,8 @@ SourceIP={{ zabbix_agent_config_sourceip }}
 # Mandatory: no
 
 # Deny system.run requests
-{% if zabbix_agent_config_denykey != "" %}
-DenyKey={{ zabbix_agent_config_denykey }}
+{% if zabbix_agent_denykey != "" %}
+DenyKey={{ zabbix_agent_denykey }}
 {% endif %}
 
 ### Option: AllowKey
@@ -99,8 +99,8 @@ DenyKey={{ zabbix_agent_config_denykey }}
 #	If no AllowKey or DenyKey rules defined, all keys are allowed.
 #
 # Mandatory: no
-{% if zabbix_agent_config_allowkey != "" %}
-AllowKey={{ zabbix_agent_config_allowkey }}
+{% if zabbix_agent_allowkey != "" %}
+AllowKey={{ zabbix_agent_allowkey }}
 {% endif %}
 
 ### Option: EnableRemoteCommands - Deprecated, use AllowKey=system.run[*] or DenyKey=system.run[*] instead
@@ -113,8 +113,8 @@ AllowKey={{ zabbix_agent_config_allowkey }}
 # Mandatory: no
 # Default:
 # EnableRemoteCommands=0
-{% if zabbix_agent_config_enableremotecommands != "" %}
-EnableRemoteCommands={{ zabbix_agent_config_enableremotecommands }}
+{% if zabbix_agent_enableremotecommands != "" %}
+EnableRemoteCommands={{ zabbix_agent_enableremotecommands }}
 {% endif %}
 
 ### Option: LogRemoteCommands
@@ -125,8 +125,8 @@ EnableRemoteCommands={{ zabbix_agent_config_enableremotecommands }}
 # Mandatory: no
 # Default:
 # LogRemoteCommands=0
-{% if zabbix_agent_config_logremotecommands != "" %}
-LogRemoteCommands={{ zabbix_agent_config_logremotecommands }}
+{% if zabbix_agent_logremotecommands != "" %}
+LogRemoteCommands={{ zabbix_agent_logremotecommands }}
 {% endif %}
 
 ##### Passive checks related
@@ -142,7 +142,7 @@ LogRemoteCommands={{ zabbix_agent_config_logremotecommands }}
 # Mandatory: yes, if StartAgents is not explicitly set to 0
 # Default:
 # Server=
-Server={{ zabbix_agent_config_server }}
+Server={{ zabbix_agent_server }}
 
 ### Option: ListenPort
 #	Agent will listen on this port for connections from the server.
@@ -151,8 +151,8 @@ Server={{ zabbix_agent_config_server }}
 # Range: 1024-32767
 # Default:
 # ListenPort=10050
-{% if zabbix_agent_config_listenport != "" %}
-ListenPort={{ zabbix_agent_config_listenport }}
+{% if zabbix_agent_listenport != "" %}
+ListenPort={{ zabbix_agent_listenport }}
 {% endif %}
 
 ### Option: ListenIP
@@ -162,8 +162,8 @@ ListenPort={{ zabbix_agent_config_listenport }}
 # Mandatory: no
 # Default:
 # ListenIP=0.0.0.0
-{% if zabbix_agent_config_listenip != "" %}
-ListenIP={{ zabbix_agent_config_listenip }}
+{% if zabbix_agent_listenip != "" %}
+ListenIP={{ zabbix_agent_listenip }}
 {% endif %}
 
 ### Option: StartAgents
@@ -174,8 +174,8 @@ ListenIP={{ zabbix_agent_config_listenip }}
 # Range: 0-100
 # Default:
 # StartAgents=3
-{% if zabbix_agent_config_startagents != "" %}
-StartAgents={{ zabbix_agent_config_startagents }}
+{% if zabbix_agent_startagents != "" %}
+StartAgents={{ zabbix_agent_startagents }}
 {% endif %}
 
 ##### Active checks related
@@ -191,8 +191,8 @@ StartAgents={{ zabbix_agent_config_startagents }}
 # Mandatory: no
 # Default:
 # ServerActive=
-{% if zabbix_agent_config_serveractive != "" %}
-ServerActive={{ zabbix_agent_config_serveractive }}
+{% if zabbix_agent_serveractive != "" %}
+ServerActive={{ zabbix_agent_serveractive }}
 {% endif %}
 
 ### Option: Hostname
@@ -203,8 +203,8 @@ ServerActive={{ zabbix_agent_config_serveractive }}
 # Mandatory: no
 # Default:
 # Hostname=
-{% if zabbix_agent_config_hostname is defined and not zabbix_agent_config_hostnameitem %}
-Hostname={{ zabbix_agent_config_hostname }}
+{% if zabbix_agent_hostname is defined and not zabbix_agent_hostnameitem %}
+Hostname={{ zabbix_agent_hostname }}
 {% endif %}
 
 ### Option: HostnameItem
@@ -214,8 +214,8 @@ Hostname={{ zabbix_agent_config_hostname }}
 # Mandatory: no
 # Default:
 # HostnameItem=system.hostname
-{% if zabbix_agent_config_hostnameitem is defined and not zabbix_agent_config_hostname %}
-HostnameItem={{ zabbix_agent_config_hostnameitem }}
+{% if zabbix_agent_hostnameitem is defined and not zabbix_agent_hostname %}
+HostnameItem={{ zabbix_agent_hostnameitem }}
 {% endif %}
 
 ### Option: HostMetadata
@@ -228,8 +228,8 @@ HostnameItem={{ zabbix_agent_config_hostnameitem }}
 # Range: 0-255 characters
 # Default:
 # HostMetadata=
-{% if zabbix_agent_config_hostmetadata != "" %}
-HostMetadata={{ zabbix_agent_config_hostmetadata }}
+{% if zabbix_agent_hostmetadata != "" %}
+HostMetadata={{ zabbix_agent_hostmetadata }}
 {% endif %}
 
 ### Option: HostMetadataItem
@@ -242,8 +242,8 @@ HostMetadata={{ zabbix_agent_config_hostmetadata }}
 # Mandatory: no
 # Default:
 # HostMetadataItem=
-{% if zabbix_agent_config_hostmetadataitem != "" %}
-HostMetadataItem={{ zabbix_agent_config_hostmetadataitem }}
+{% if zabbix_agent_hostmetadataitem != "" %}
+HostMetadataItem={{ zabbix_agent_hostmetadataitem }}
 {% endif %}
 
 {% if zabbix_agent_version | string == "5.0" %}
@@ -257,8 +257,8 @@ HostMetadataItem={{ zabbix_agent_config_hostmetadataitem }}
 # Range: 0-255 characters
 # Default:
 # HostInterface=
-{% if zabbix_agent_config_hostinterface != "" %}
-HostInterface={{ zabbix_agent_config_hostinterface }}
+{% if zabbix_agent_hostinterface != "" %}
+HostInterface={{ zabbix_agent_hostinterface }}
 {% endif %}
 
 ### Option: HostInterfaceItem
@@ -271,8 +271,8 @@ HostInterface={{ zabbix_agent_config_hostinterface }}
 # Mandatory: no
 # Default:
 # HostInterfaceItem=
-{% if zabbix_agent_config_hostinterfaceitem != "" %}
-HostInterfaceItem={{ zabbix_agent_config_hostinterfaceitem }}
+{% if zabbix_agent_hostinterfaceitem != "" %}
+HostInterfaceItem={{ zabbix_agent_hostinterfaceitem }}
 {% endif %}
 {% endif %}
 
@@ -283,8 +283,8 @@ HostInterfaceItem={{ zabbix_agent_config_hostinterfaceitem }}
 # Range: 60-3600
 # Default:
 # RefreshActiveChecks=120
-{% if zabbix_agent_config_refreshactivechecks != "" %}
-RefreshActiveChecks={{ zabbix_agent_config_refreshactivechecks }}
+{% if zabbix_agent_refreshactivechecks != "" %}
+RefreshActiveChecks={{ zabbix_agent_refreshactivechecks }}
 {% endif %}
 
 ### Option: BufferSend
@@ -294,8 +294,8 @@ RefreshActiveChecks={{ zabbix_agent_config_refreshactivechecks }}
 # Range: 1-3600
 # Default:
 # BufferSend=5
-{% if zabbix_agent_config_buffersend != "" %}
-BufferSend={{ zabbix_agent_config_buffersend }}
+{% if zabbix_agent_buffersend != "" %}
+BufferSend={{ zabbix_agent_buffersend }}
 {% endif %}
 
 ### Option: BufferSize
@@ -306,8 +306,8 @@ BufferSend={{ zabbix_agent_config_buffersend }}
 # Range: 2-65535
 # Default:
 # BufferSize=100
-{% if zabbix_agent_config_buffersize != "" %}
-BufferSize={{ zabbix_agent_config_buffersize }}
+{% if zabbix_agent_buffersize != "" %}
+BufferSize={{ zabbix_agent_buffersize }}
 {% endif %}
 
 ### Option: MaxLinesPerSecond
@@ -320,8 +320,8 @@ BufferSize={{ zabbix_agent_config_buffersize }}
 # Range: 1-1000
 # Default:
 # MaxLinesPerSecond=20
-{% if zabbix_agent_config_maxlinespersecond != "" %}
-MaxLinesPerSecond={{ zabbix_agent_config_maxlinespersecond }}
+{% if zabbix_agent_maxlinespersecond != "" %}
+MaxLinesPerSecond={{ zabbix_agent_maxlinespersecond }}
 {% endif %}
 
 ############ ADVANCED PARAMETERS #################
@@ -338,9 +338,9 @@ MaxLinesPerSecond={{ zabbix_agent_config_maxlinespersecond }}
 # Mandatory: no
 # Range:
 # Default:
-{% if zabbix_agent_config_alias != "" %}
-Alias={{ zabbix_agent_config_alias }}
-{% endif %}
+{% for alias in zabbix_agent_alias %}
+Alias={{ alias }}
+{% endfor %}
 
 ### Option: Timeout
 #	Spend no more than Timeout seconds on processing
@@ -349,8 +349,8 @@ Alias={{ zabbix_agent_config_alias }}
 # Range: 1-30
 # Default:
 # Timeout=3
-{% if zabbix_agent_config_timeout != "" %}
-Timeout={{ zabbix_agent_config_timeout }}
+{% if zabbix_agent_timeout != "" %}
+Timeout={{ zabbix_agent_timeout }}
 {% endif %}
 
 ### Option: AllowRoot
@@ -363,8 +363,8 @@ Timeout={{ zabbix_agent_config_timeout }}
 # Mandatory: no
 # Default:
 # AllowRoot=0
-{% if zabbix_agent_config_allowroot != "" %}
-AllowRoot={{ zabbix_agent_config_allowroot }}
+{% if zabbix_agent_allowroot != "" %}
+AllowRoot={{ zabbix_agent_allowroot }}
 {% endif %}
 
 ### Option: User
@@ -374,8 +374,8 @@ AllowRoot={{ zabbix_agent_config_allowroot }}
 # Mandatory: no
 # Default:
 # User=zabbix
-{% if zabbix_agent_config_user != "" %}
-User={{ zabbix_agent_config_user }}
+{% if zabbix_agent_user != "" %}
+User={{ zabbix_agent_user }}
 {% endif %}
 
 ### Option: Include
@@ -386,7 +386,7 @@ User={{ zabbix_agent_config_user }}
 # Default:
 # Include=
 
-{% for inc in zabbix_agent_config_include %}
+{% for inc in zabbix_agent_include %}
 Include={{ inc }}
 {% endfor %}
 # Include=/usr/local/etc/zabbix_agentd.userparams.conf
@@ -407,8 +407,8 @@ Include={{ inc }}
 # Range: 0-1
 # Default:
 # UnsafeUserParameters=0
-{% if zabbix_agent_config_unsafeuserparameters != "" %}
-UnsafeUserParameters={{ zabbix_agent_config_unsafeuserparameters }}
+{% if zabbix_agent_unsafeuserparameters != "" %}
+UnsafeUserParameters={{ zabbix_agent_unsafeuserparameters }}
 {% endif %}
 
 ### Option: UserParameter
@@ -419,7 +419,7 @@ UnsafeUserParameters={{ zabbix_agent_config_unsafeuserparameters }}
 # Mandatory: no
 # Default:
 # UserParameter=
-{% for up in zabbix_agent_config_userparameter %}
+{% for up in zabbix_agent_userparameter %}
 UserParameter={{ up }}
 {% endfor %}
 
@@ -433,8 +433,8 @@ UserParameter={{ up }}
 # Mandatory: no
 # Default:
 # LoadModulePath=${libdir}/modules
-{% if zabbix_agent_config_loadmodulepath != "" %}
-LoadModulePath={{ zabbix_agent_config_loadmodulepath }}
+{% if zabbix_agent_loadmodulepath != "" %}
+LoadModulePath={{ zabbix_agent_loadmodulepath }}
 {% endif %}
 
 ### Option: LoadModule
@@ -450,7 +450,7 @@ LoadModulePath={{ zabbix_agent_config_loadmodulepath }}
 # Mandatory: no
 # Default:
 # LoadModule=
-{% for lm in zabbix_agent_config_loadmodule %}
+{% for lm in zabbix_agent_loadmodule %}
 LoadModule={{ lm }}
 {% endfor %}
 
@@ -467,7 +467,7 @@ LoadModule={{ lm }}
 # Default:
 # TLSConnect=unencrypted
 
-TLSConnect={{ zabbix_agent_config_tlsconnect }}
+TLSConnect={{ zabbix_agent_tlsconnect }}
 
 ### Option: TLSAccept
 #	What incoming connections to accept.
@@ -479,8 +479,8 @@ TLSConnect={{ zabbix_agent_config_tlsconnect }}
 # Mandatory: yes, if TLS certificate or PSK parameters are defined (even for 'unencrypted' connection)
 # Default:
 # TLSAccept=unencrypted
-{% if zabbix_agent_config_tlsaccept != "" %}
-TLSAccept={{ zabbix_agent_config_tlsaccept }}
+{% if zabbix_agent_tlsaccept != "" %}
+TLSAccept={{ zabbix_agent_tlsaccept }}
 {% endif %}
 
 ### Option: TLSCAFile
@@ -490,8 +490,8 @@ TLSAccept={{ zabbix_agent_config_tlsaccept }}
 # Mandatory: no
 # Default:
 # TLSCAFile=
-{% if zabbix_agent_config_tlscafile != "" %}
-TLSCAFile={{ zabbix_agent_config_tlscafile }}
+{% if zabbix_agent_tlscafile != "" %}
+TLSCAFile={{ zabbix_agent_tlscafile }}
 {% endif %}
 
 ### Option: TLSCRLFile
@@ -500,8 +500,8 @@ TLSCAFile={{ zabbix_agent_config_tlscafile }}
 # Mandatory: no
 # Default:
 # TLSCRLFile=
-{% if zabbix_agent_config_tlscrlfile != "" %}
-TLSCRLFile={{ zabbix_agent_config_tlscrlfile }}
+{% if zabbix_agent_tlscrlfile != "" %}
+TLSCRLFile={{ zabbix_agent_tlscrlfile }}
 {% endif %}
 
 ### Option: TLSServerCertIssuer
@@ -510,8 +510,8 @@ TLSCRLFile={{ zabbix_agent_config_tlscrlfile }}
 # Mandatory: no
 # Default:
 # TLSServerCertIssuer=
-{% if zabbix_agent_config_tlsservercertissuer != "" %}
-TLSServerCertIssuer={{ zabbix_agent_config_tlsservercertissuer }}
+{% if zabbix_agent_tlsservercertissuer != "" %}
+TLSServerCertIssuer={{ zabbix_agent_tlsservercertissuer }}
 {% endif %}
 
 ### Option: TLSServerCertSubject
@@ -520,8 +520,8 @@ TLSServerCertIssuer={{ zabbix_agent_config_tlsservercertissuer }}
 # Mandatory: no
 # Default:
 # TLSServerCertSubject=
-{% if zabbix_agent_config_tlsservercertsubject != "" %}
-TLSServerCertSubject={{ zabbix_agent_config_tlsservercertsubject }}
+{% if zabbix_agent_tlsservercertsubject != "" %}
+TLSServerCertSubject={{ zabbix_agent_tlsservercertsubject }}
 {% endif %}
 
 ### Option: TLSCertFile
@@ -530,8 +530,8 @@ TLSServerCertSubject={{ zabbix_agent_config_tlsservercertsubject }}
 # Mandatory: no
 # Default:
 # TLSCertFile=
-{% if zabbix_agent_config_tlscertfile != "" %}
-TLSCertFile={{ zabbix_agent_config_tlscertfile }}
+{% if zabbix_agent_tlscertfile != "" %}
+TLSCertFile={{ zabbix_agent_tlscertfile }}
 {% endif %}
 
 ### Option: TLSKeyFile
@@ -540,8 +540,8 @@ TLSCertFile={{ zabbix_agent_config_tlscertfile }}
 # Mandatory: no
 # Default:
 # TLSKeyFile=
-{% if zabbix_agent_config_tlskeyfile != "" %}
-TLSKeyFile={{ zabbix_agent_config_tlskeyfile }}
+{% if zabbix_agent_tlskeyfile != "" %}
+TLSKeyFile={{ zabbix_agent_tlskeyfile }}
 {% endif %}
 
 ### Option: TLSPSKIdentity
@@ -550,8 +550,8 @@ TLSKeyFile={{ zabbix_agent_config_tlskeyfile }}
 # Mandatory: no
 # Default:
 # TLSPSKIdentity=
-{% if zabbix_agent_config_tlspskidentity != "" %}
-TLSPSKIdentity={{ zabbix_agent_config_tlspskidentity }}
+{% if zabbix_agent_tlspskidentity != "" %}
+TLSPSKIdentity={{ zabbix_agent_tlspskidentity }}
 {% endif %}
 
 ### Option: TLSPSKFile
@@ -560,8 +560,8 @@ TLSPSKIdentity={{ zabbix_agent_config_tlspskidentity }}
 # Mandatory: no
 # Default:
 # TLSPSKFile=
-{% if zabbix_agent_config_tlspskfile != "" %}
-TLSPSKFile={{ zabbix_agent_config_tlspskfile }}
+{% if zabbix_agent_tlspskfile != "" %}
+TLSPSKFile={{ zabbix_agent_tlspskfile }}
 {% endif %}
 
 {% if zabbix_agent_version | string != "3.0" %}
@@ -574,8 +574,8 @@ TLSPSKFile={{ zabbix_agent_config_tlspskfile }}
 # Mandatory: no
 # Default:
 # TLSCipherCert13=
-{% if zabbix_agent_config_tlsciphercert13 != "" %}
-TLSCipherCert13={{ zabbix_agent_config_tlsciphercert13 }}
+{% if zabbix_agent_tlsciphercert13 != "" %}
+TLSCipherCert13={{ zabbix_agent_tlsciphercert13 }}
 {% endif %}
 
 ### Option: TLSCipherCert
@@ -589,8 +589,8 @@ TLSCipherCert13={{ zabbix_agent_config_tlsciphercert13 }}
 # Mandatory: no
 # Default:
 # TLSCipherCert=
-{% if zabbix_agent_config_tlsciphercert != "" %}
-TLSCipherCert={{ zabbix_agent_config_tlsciphercert }}
+{% if zabbix_agent_tlsciphercert != "" %}
+TLSCipherCert={{ zabbix_agent_tlsciphercert }}
 {% endif %}
 
 ### Option: TLSCipherPSK13
@@ -602,8 +602,8 @@ TLSCipherCert={{ zabbix_agent_config_tlsciphercert }}
 # Mandatory: no
 # Default:
 # TLSCipherPSK13=
-{% if zabbix_agent_config_tlscipherpsk13 != "" %}
-TLSCipherPSK13={{ zabbix_agent_config_tlscipherpsk13 }}
+{% if zabbix_agent_tlscipherpsk13 != "" %}
+TLSCipherPSK13={{ zabbix_agent_tlscipherpsk13 }}
 {% endif %}
 
 ### Option: TLSCipherPSK
@@ -617,8 +617,8 @@ TLSCipherPSK13={{ zabbix_agent_config_tlscipherpsk13 }}
 # Mandatory: no
 # Default:
 # TLSCipherPSK=
-{% if zabbix_agent_config_tlscipherpsk != "" %}
-TLSCipherPSK={{ zabbix_agent_config_tlscipherpsk }}
+{% if zabbix_agent_tlscipherpsk != "" %}
+TLSCipherPSK={{ zabbix_agent_tlscipherpsk }}
 {% endif %}
 
 ### Option: TLSCipherAll13
@@ -630,8 +630,8 @@ TLSCipherPSK={{ zabbix_agent_config_tlscipherpsk }}
 # Mandatory: no
 # Default:
 # TLSCipherAll13=
-{% if zabbix_agent_config_tlscipherall13 != "" %}
-TLSCipherAll13={{ zabbix_agent_config_tlscipherall13 }}
+{% if zabbix_agent_tlscipherall13 != "" %}
+TLSCipherAll13={{ zabbix_agent_tlscipherall13 }}
 {% endif %}
 
 ### Option: TLSCipherAll
@@ -645,7 +645,7 @@ TLSCipherAll13={{ zabbix_agent_config_tlscipherall13 }}
 # Mandatory: no
 # Default:
 # TLSCipherAll=
-{% if zabbix_agent_config_tlscipherall != "" %}
-TLSCipherAll={{ zabbix_agent_config_tlscipherall }}
+{% if zabbix_agent_tlscipherall != "" %}
+TLSCipherAll={{ zabbix_agent_tlscipherall }}
 {% endif %}
 {% endif %}
