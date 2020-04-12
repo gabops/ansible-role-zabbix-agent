@@ -3,16 +3,18 @@
   hosts: all
   vars:
     zabbix_agent_version: 4.4
-    zabbix_agent_config:
-      DebugLevel: 4
-      Hostname: "{{ inventory_hostname }}"
-      ListenIP: "{{ ansible_default_ipv4.address }}"
-      Server: 192.168.0.10
-      StartAgents: 5
-      HostMetadataItem: system.uname
-      Timeout: 20
-      Include:
-        - /usr/local/etc/*.conf
-        - /usr/local/lib/*.conf
+    zabbix_agent_debuglevel: 4
+    zabbix_agent_hostname: "{{ inventory_hostname }}"
+    zabbix_agent_server: 192.168.0.10
+    zabbix_agent_startagents: 5
+    zabbix_agent_hostmetadataitem: system.uname
+    zabbix_agent_timeout: 20
+    zabbix_agent_tlsconnect: psk
+    zabbix_agent_tlsaccept: psk
+    zabbix_agent_tlspskidentity: molecule-psk-01
+    zabbix_agent_tlspskfile: /etc/opt/zabbix_agentd.psk
+    zabbix_agent_config_include:
+      - /usr/local/etc/*.conf
+      - /usr/local/lib/*.conf
   roles:
     - role: "{{ lookup('env', 'MOLECULE_PROJECT_DIRECTORY') | basename }}"
