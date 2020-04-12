@@ -25,6 +25,10 @@ Role Variables
 | Variable | Default value | Description |
 | :--- | :--- | :--- |
 | zabbix_agent_pidfile | /var/run/zabbix/ zabbix_agentd.pid | Name of PID file.  |
+| zabbix_agent_hostinterface | "" | Optional parameter that defines host interface.
+Host interface is used at host autoregistration process. **Only available since 4.4** |
+| zabbix_agent_hostinterfaceitem | "" | Optional parameter that defines an item used for getting host interface.
+Host interface is used at host autoregistration process. **Only available since 4.4** |
 | zabbix_agent_logtype | file | Log output type. |
 | zabbix_agent_logfile | "" | Name of log file. |
 | zabbix_agent_logfilesize | "" | Maximum size of log file in MB. |

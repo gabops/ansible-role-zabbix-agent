@@ -54,6 +54,10 @@ zabbix_agent_maxlinespersecond: 20
 
 zabbix_agent_pidfile: /var/run/zabbix/zabbix_agentd.pid
 
+zabbix_agent_hostinterface: ""
+
+zabbix_agent_hostinterfaceitem: ""
+
 zabbix_agent_refreshactivechecks: 120
 
 zabbix_agent_server: 127.0.0.1
