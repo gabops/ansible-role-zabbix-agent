@@ -4,7 +4,6 @@
   vars:
     zabbix_agent_debuglevel: 4
     zabbix_agent_hostname: "{{ inventory_hostname }}"
-    zabbix_agent_listenip: 0.0.0.0
     zabbix_agent_server: 192.168.0.10
     zabbix_agent_startagents: 5
     zabbix_agent_hostmetadataitem: system.uname
