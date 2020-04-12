@@ -3,14 +3,14 @@
   hosts: all
   vars:
     zabbix_agent_version: 3.0
-    zabbix_agent_config_debuglevel: 4
-    zabbix_agent_config_hostname: "{{ inventory_hostname }}"
-    zabbix_agent_config_listenip: "{{ ansible_default_ipv4.address }}"
-    zabbix_agent_config_server: 192.168.0.10
-    zabbix_agent_config_startagents: 5
-    zabbix_agent_config_hostmetadataitem: system.uname
-    zabbix_agent_config_timeout: 20
-    zabbix_agent_config_include:
+    zabbix_agent_debuglevel: 4
+    zabbix_agent_hostname: "{{ inventory_hostname }}"
+    zabbix_agent_listenip: 0.0.0.0
+    zabbix_agent_server: 192.168.0.10
+    zabbix_agent_startagents: 5
+    zabbix_agent_hostmetadataitem: system.uname
+    zabbix_agent_timeout: 20
+    zabbix_agent_include:
       - /usr/local/etc/*.conf
       - /usr/local/lib/*.conf
   roles:

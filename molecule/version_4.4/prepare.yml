@@ -1,0 +1,10 @@
+---
+- name: Prepare
+  hosts: all
+  tasks:
+    - name: Install openssl
+      package:
+        name: openssl
+
+    - name: Generate psk
+      shell: openssl rand -hex 32 > /etc/opt/zabbix_agentd.psk
