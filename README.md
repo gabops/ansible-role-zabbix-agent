@@ -24,7 +24,7 @@ Role Variables
 #### GENERAL PARAMETERS
 | Variable | Default value | Description |
 | :--- | :--- | :--- |
-| zabbix_agent_pidfile | /var/run/zabbix/ zabbix_agentd.pid | |
+| zabbix_agent_pidfile | /var/run/zabbix/ zabbix_agentd.pid | Name of PID file.  |
 | zabbix_agent_logtype | file | Log output type. |
 | zabbix_agent_logfile | "" | Name of log file. |
 | zabbix_agent_logfilesize | "" | Maximum size of log file in MB. |
@@ -38,10 +38,8 @@ Role Variables
 | zabbix_agent_listenport | 10050 | Agent will listen on this port for connections from the server.  |
 | zabbix_agent_listenip | 0.0.0.0 | List of comma delimited IP addresses that the agent should listen on. |
 | zabbix_agent_startagents | 3 | Number of pre-forked instances of zabbix_agentd that process passive checks. |
-| zabbix_agent_serveractive | 127.0.0.1 | IP:port (or hostname:port) of Zabbix server or Zabbix proxy for active checks.
-Multiple comma-delimited addresses can be provided to use several independent Zabbix servers in parallel. Spaces are allowed. |
-| zabbix_agent_hostname | Zabbix server | Unique, case sensitive hostname.
-Required for active checks and must match hostname as configured on the server. |
+| zabbix_agent_serveractive | 127.0.0.1 | IP:port (or hostname:port) of Zabbix server or Zabbix proxy for active checks. Multiple comma-delimited addresses can be provided to use several independent Zabbix servers in parallel. Spaces are allowed. |
+| zabbix_agent_hostname | Zabbix server | Unique, case sensitive hostname. Required for active checks and must match hostname as configured on the server. |
 | zabbix_agent_hostnameitem | system.hostname | Optional parameter that defines a Zabbix agent item used for getting host name. This option is only used when Hostname is not defined. |
 | zabbix_agent_hostmetadata | "" | Optional parameter that defines host metadata. Host metadata is used only at host auto-registration process (active agent). |
 | zabbix_agent_hostmetadataitem | "" | Optional parameter that defines a Zabbix agent item used for getting host metadata. This option is only used when HostMetadata is not defined. |
@@ -56,16 +54,14 @@ Required for active checks and must match hostname as configured on the server. 
 | zabbix_agent_alias | [] | Sets an alias for an item key.  |
 | zabbix_agent_timeout | 3 | Spend no more than Timeout seconds on processing. |
 | zabbix_agent_allowroot | 0 | Allow the agent to run as 'root'. |
-| zabbix_agent_user | zabbix | Drop privileges to a specific, existing user on the system.
-Only has effect if run as 'root' and AllowRoot is disabled. |
+| zabbix_agent_user | zabbix | Drop privileges to a specific, existing user on the system. Only has effect if run as 'root' and AllowRoot is disabled. |
 | zabbix_agent_include | ['/etc/zabbix/zabbix_agentd.d/*.conf'] | You may include individual files or all files in a directory in the configuration file. |
 
 #### USER-DEFINED MONITORED PARAMETERS
 | Variable | Default value | Description |
 | :--- | :--- | :--- |
 | zabbix_agent_unsafeuserparameters | 0 | Allow all characters to be passed in arguments to user-defined parameters. |
-| zabbix_agent_userparameter | [] | User-defined parameter to monitor. There can be several user-defined parameters.
-Format: UserParameter=<key>,<shell command> |
+| zabbix_agent_userparameter | [] | User-defined parameter to monitor. There can be several user-defined parameters. Format: UserParameter=<key>,<shell command> |
 
 #### LOADABLE MODULES
 | Variable | Default value | Description |
