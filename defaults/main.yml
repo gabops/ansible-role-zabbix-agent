@@ -1,106 +1,105 @@
 ---
+zabbix_agent_version: 4.0
+
 zabbix_agent_service_enabled: true
 
 zabbix_agent_service_state: started
 
-zabbix_agent_version: 4.0
-
 zabbix_agent_config_backup: false
 
-zabbix_agent_config_alias: ""
+zabbix_agent_alias: []
 
-zabbix_agent_config_allowkey: system.run[*]  # Only 5.0
+zabbix_agent_allowkey: system.run[*]
 
-zabbix_agent_config_allowroot: 0
+zabbix_agent_allowroot: 0
 
-zabbix_agent_config_buffersend: 5
+zabbix_agent_buffersend: 5
 
-zabbix_agent_config_buffersize: 100
+zabbix_agent_buffersize: 100
 
-zabbix_agent_config_denykey: system.run[*]  # Only 5.0
+zabbix_agent_denykey: system.run[*]
 
-zabbix_agent_config_debuglevel: 3
+zabbix_agent_debuglevel: 3
 
-zabbix_agent_config_enableremotecommands: 0
+zabbix_agent_enableremotecommands: 0
 
-zabbix_agent_config_hostmetadata: ""
+zabbix_agent_hostmetadata: ""
 
-zabbix_agent_config_hostmetadataitem: ""
+zabbix_agent_hostmetadataitem: ""
 
-zabbix_agent_config_hostname: Zabbix server
+zabbix_agent_hostname: Zabbix server
 
-zabbix_agent_config_hostnameitem: system.hostname
+zabbix_agent_hostnameitem: system.hostname
 
-zabbix_agent_config_include:
+zabbix_agent_include:
   - /etc/zabbix/zabbix_agentd.d/*.conf
 
-zabbix_agent_config_listenip: 0.0.0.0
+zabbix_agent_listenip: 0.0.0.0
 
-zabbix_agent_config_listenport: 10050
+zabbix_agent_listenport: 10050
 
-zabbix_agent_config_loadmodule: []
+zabbix_agent_loadmodule: []
 
-zabbix_agent_config_loadmodulepath: ${libdir}/modules
+zabbix_agent_loadmodulepath: ${libdir}/modules
 
-zabbix_agent_config_logfile: /var/log/zabbix/zabbix_agentd.log
+zabbix_agent_logfile: /var/log/zabbix/zabbix_agentd.log
 
-zabbix_agent_config_logfilesize: 0
+zabbix_agent_logfilesize: 0
 
-zabbix_agent_config_logtype: file
+zabbix_agent_logtype: file
 
-zabbix_agent_config_logremotecommands: 0
+zabbix_agent_logremotecommands: 0
 
-zabbix_agent_config_maxlinespersecond: 20
+zabbix_agent_maxlinespersecond: 20
 
-zabbix_agent_config_pidfile: /var/run/zabbix/zabbix_agentd.pid
+zabbix_agent_pidfile: /var/run/zabbix/zabbix_agentd.pid
 
-zabbix_agent_config_refreshactivechecks: 120
+zabbix_agent_refreshactivechecks: 120
 
-zabbix_agent_config_server: 127.0.0.1
+zabbix_agent_server: 127.0.0.1
 
-zabbix_agent_config_serveractive: 127.0.0.1
+zabbix_agent_serveractive: 127.0.0.1
 
-zabbix_agent_config_sourceip: ""
+zabbix_agent_sourceip: ""
 
-zabbix_agent_config_startagents: 3
+zabbix_agent_startagents: 3
 
-zabbix_agent_config_timeout: 3
+zabbix_agent_timeout: 3
 
-#### tls
-zabbix_agent_config_tlsaccept: ""
+zabbix_agent_tlsaccept: ""
 
-zabbix_agent_config_tlscafile: ""
+zabbix_agent_tlscafile: ""
 
-zabbix_agent_config_tlscertfile: ""
+zabbix_agent_tlscertfile: ""
 
-zabbix_agent_config_tlscipherall: ""
+zabbix_agent_tlscipherall: ""
 
-zabbix_agent_config_tlscipherall13: ""
+zabbix_agent_tlscipherall13: ""
 
-zabbix_agent_config_tlsciphercert: ""
+zabbix_agent_tlsciphercert: ""
 
-zabbix_agent_config_tlsciphercert13: ""
+zabbix_agent_tlsciphercert13: ""
 
-zabbix_agent_config_tlscipherpsk: ""
+zabbix_agent_tlscipherpsk: ""
 
-zabbix_agent_config_tlscipherpsk13: ""
+zabbix_agent_tlscipherpsk13: ""
 
-zabbix_agent_config_tlsconnect: unencrypted
+zabbix_agent_tlsconnect: unencrypted
 
-zabbix_agent_config_tlscrlfile: ""
+zabbix_agent_tlscrlfile: ""
 
-zabbix_agent_config_tlskeyfile: ""
+zabbix_agent_tlskeyfile: ""
 
-zabbix_agent_config_tlspskfile: ""
+zabbix_agent_tlspskfile: ""
 
-zabbix_agent_config_tlspskidentity: ""
+zabbix_agent_tlspskidentity: ""
 
-zabbix_agent_config_tlsservercertissuer: ""
+zabbix_agent_tlsservercertissuer: ""
 
-zabbix_agent_config_tlsservercertsubject: ""
+zabbix_agent_tlsservercertsubject: ""
 
-zabbix_agent_config_unsafeuserparameters: 0
+zabbix_agent_unsafeuserparameters: 0
 
-zabbix_agent_config_user: zabbix
+zabbix_agent_user: zabbix
 
-zabbix_agent_config_userparameter: []
+zabbix_agent_userparameter: []
