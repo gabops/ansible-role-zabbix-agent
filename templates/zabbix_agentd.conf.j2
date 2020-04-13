@@ -454,6 +454,8 @@ LoadModulePath={{ zabbix_agent_loadmodulepath }}
 LoadModule={{ lm }}
 {% endfor %}
 
+{% if not (ansible_distribution == "CentOS" and ansible_distribution_major_version == "8" and zabbix_agent_version | string == "3.0") %}
+
 ####### TLS-RELATED PARAMETERS #######
 
 ### Option: TLSConnect
@@ -647,5 +649,6 @@ TLSCipherAll13={{ zabbix_agent_tlscipherall13 }}
 # TLSCipherAll=
 {% if zabbix_agent_tlscipherall != "" %}
 TLSCipherAll={{ zabbix_agent_tlscipherall }}
+{% endif %}
 {% endif %}
 {% endif %}
